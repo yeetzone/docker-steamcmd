@@ -29,8 +29,9 @@ RUN set -ex \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Copy common scripts.
-COPY /script/* /usr/local/bin/
+# Copy scripts.
+COPY /script/steamcmd /usr/local/bin/steamcmd
+RUN chmod +x /usr/local/bin/steamcmd
 
 # Copy entrypoint script.
 COPY /entrypoint.sh /
