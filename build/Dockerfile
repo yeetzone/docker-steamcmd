@@ -10,7 +10,9 @@ ARG STEAM_URL
 ENV STEAM_URL ${STEAM_URL:-"https://cdn.steamstatic.com/client/installer/steamcmd_linux.tar.gz"}
 
 # Add our user/group first to ensure their IDs get set consistently.
-RUN groupadd -r $STEAM_USER && useradd -rm -d $STEAM_HOME -g $STEAM_USER $STEAM_USER
+RUN set -ex \
+	&& groupadd -g 1000 -r $STEAM_USER \
+	&& useradd -u 1000 -rm -d $STEAM_HOME -g $STEAM_USER $STEAM_USER
 
 # Install everything.
 RUN set -ex \
