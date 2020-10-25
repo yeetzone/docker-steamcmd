@@ -1,5 +1,5 @@
-FROM oomphworks/gosu:next
-MAINTAINER OOMPHWORKS <support@oomph.works>
+FROM yeetzone/gosu:local
+MAINTAINER YEET Zone <support@yeet.zone>
 
 # Set build arguments.
 ARG STEAM_USER
