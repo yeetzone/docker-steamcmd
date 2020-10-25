@@ -1,4 +1,4 @@
-FROM yeetzone/gosu
+FROM yeetzone/gosu:next
 MAINTAINER YEET Zone <support@yeet.zone>
 
 # Set build arguments.
