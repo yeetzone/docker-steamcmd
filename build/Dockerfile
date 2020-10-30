@@ -33,11 +33,14 @@ RUN set -ex \
 
 # Copy scripts.
 COPY /script/steamcmd /usr/local/bin/steamcmd
-RUN set -ex \
-	&& chmod +x /usr/local/bin/steamcmd
 
 # Copy entrypoint script.
 COPY /entrypoint.sh /
+
+# Set permissions.
+RUN set -ex \
+	&& chmod +x /entrypoint.sh \
+	&& chmod +x /usr/local/bin/steamcmd
 
 # Set volumes.
 VOLUME $STEAM_HOME/Steam/
