@@ -42,9 +42,6 @@ RUN set -ex \
 	&& chmod +x /entrypoint.sh \
 	&& chmod +x /usr/local/bin/steamcmd
 
-# Set volumes.
-VOLUME $STEAM_HOME/Steam/
-
 # Set entrypoint.
 ENTRYPOINT ["/entrypoint.sh"]
 
