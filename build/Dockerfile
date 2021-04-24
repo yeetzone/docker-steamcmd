@@ -7,7 +7,7 @@ ENV STEAM_USER ${STEAM_USER:-"steam"}
 ARG STEAM_HOME
 ENV STEAM_HOME ${STEAM_HOME:-"/opt/steam"}
 ARG STEAM_URL
-ENV STEAM_URL ${STEAM_URL:-"https://cdn.steamstatic.com/client/installer/steamcmd_linux.tar.gz"}
+ENV STEAM_URL ${STEAM_URL:-"https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz"}
 
 # Add our user/group first to ensure their IDs get set consistently.
 RUN set -ex \
