@@ -1,0 +1,27 @@
+name: Publish daily images
+
+on:
+  schedule:
+    - cron:  '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      -
+        name: login
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: publish
+        uses: docker/build-push-action@v2
+        with:
+          context: ./build/
+          push: true
+          tags: yeetzone/steamcmd:latest
